@@ -1,7 +1,5 @@
 
-
 package com.example.dbexample;
-
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,14 +7,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Cart{
+public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String item;
-   
 
     public Long getId() {
         return id;
@@ -25,11 +22,12 @@ public class Cart{
     public void setId(Long id) {
         this.id = id;
     }
+
     public String getItem() {
         return item;
     }
 
-    public void setItem(String item ) {
+    public void setItem(String item) {
         this.item = item;
     }
 }

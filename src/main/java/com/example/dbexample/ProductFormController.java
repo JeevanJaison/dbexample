@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
 
-// import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.web.bind.annotation.*;
-
 @Controller
 public class ProductFormController {
+
+    @Autowired
+    private ProductRepository productRepository;
 
     @GetMapping("/")
     public String showAddProductForm(Model model) {
@@ -22,10 +22,7 @@ public class ProductFormController {
     @PostMapping("/saveProduct")
     public String displayProduct(@ModelAttribute("product") Product product, Model model) {
         model.addAttribute("product", product);
+        productRepository.save(product);
         return "product-display";
     }
-
-    @Autowired
-    private ProductRepository productRepository;
-
 }
