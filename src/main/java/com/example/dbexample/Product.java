@@ -37,7 +37,7 @@ public class Product {
         return description;
     }
 
-    public void setDescripton(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
